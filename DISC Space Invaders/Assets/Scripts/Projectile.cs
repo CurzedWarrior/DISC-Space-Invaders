@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float Speed = 5f;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.position += transform.up * Speed * Time.deltaTime;
+    }
+    void OnCollisionEnter(Collision Other)
+    {
+        Destroy(this.gameObject);
+        print("hello");
     }
 }

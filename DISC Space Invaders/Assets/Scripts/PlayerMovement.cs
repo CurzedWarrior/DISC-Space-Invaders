@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    void Start()
-    {
+    public float speed = 5f;
 
-    }
-    // Update is called once per frame
+    public bullet LaserPrefab;
+
     void Update()
     {
-        float speed = 5f;
+        
         if (Input.GetKey("a"))
         {
             transform.Translate(-speed * Time.deltaTime, 0, 0);
@@ -20,7 +19,14 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate(speed * Time.deltaTime, 0, 0);
         }
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
+    }
+    void Shoot()
+    {
+        Instantiate(this.LaserPrefab, this.transform.position, Quaternion.identity);
     }
 
 }
