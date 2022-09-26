@@ -24,7 +24,7 @@ public class Invader : MonoBehaviour
     {
         _animationFrame++;
 
-        if (_animationFrame > this.animationSprites.Length)
+        if (_animationFrame >= this.animationSprites.Length)
         {
             _animationFrame = 0;
         }
