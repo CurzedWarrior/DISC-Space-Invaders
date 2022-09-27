@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 507414439168366897, guid: 577eac129783bf547a3ea36600205659, type: 3}
+      propertyPath: prefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3662919616266501815, guid: 577eac129783bf547a3ea36600205659, type: 3}
       propertyPath: m_Name
-      value: AlienOne
+      value: AlienOne Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4433344087694759013, guid: 577eac129783bf547a3ea36600205659, type: 3}
       propertyPath: m_Sprite
@@ -99,5 +103,43 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 507414439168366897, guid: 577eac129783bf547a3ea36600205659, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 577eac129783bf547a3ea36600205659, type: 3}
+--- !u!1 &2652563605020281943 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3662919616266501815, guid: 577eac129783bf547a3ea36600205659, type: 3}
+  m_PrefabInstance: {fileID: 1592727738765210336}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2309077820075577606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2652563605020281943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e6677692c00074dbdd9a95237f8a9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 0}
+  rows: 5
+  columns: 11
+--- !u!114 &8735661522415975843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2652563605020281943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2710417dd7ca4c04eb4a6c6409e0987f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationSprites:
+  - {fileID: 21300000, guid: d5a5e767195997340bcf26f7a777d12f, type: 3}
+  - {fileID: 21300000, guid: 3d25cb0e9b60ea14cb6408efc1f811a9, type: 3}
+  animationTime: 1
