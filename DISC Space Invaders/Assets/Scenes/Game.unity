@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 134183729}
   m_Layer: 6
   m_Name: RightBoundary
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -624,7 +624,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2034934509}
   - component: {fileID: 2034934508}
-  - component: {fileID: 2034934510}
   m_Layer: 8
   m_Name: Invaders
   m_TagString: Untagged
@@ -648,8 +647,11 @@ MonoBehaviour:
   - {fileID: 2495944215115643445, guid: 2bf2bf943a862de4083395d382917a36, type: 3}
   - {fileID: 2854806869646746299, guid: 039f8df6c9498aa4fadd2a02b2391277, type: 3}
   - {fileID: 234177096466290944, guid: 5fc6b7726a1437241be178c803cab7c3, type: 3}
+  - {fileID: 234177096466290944, guid: 5fc6b7726a1437241be178c803cab7c3, type: 3}
+  - {fileID: 234177096466290944, guid: 5fc6b7726a1437241be178c803cab7c3, type: 3}
   rows: 5
   columns: 11
+  speed: 3
 --- !u!4 &2034934509
 Transform:
   m_ObjectHideFlags: 0
@@ -658,23 +660,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034934507}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2034934510
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2034934507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3498b3c702afd545b2660f0f71ef594, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5

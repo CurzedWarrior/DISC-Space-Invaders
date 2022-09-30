@@ -5,26 +5,24 @@ using UnityEngine;
 public class Movementtest : MonoBehaviour
 {
     public float speed = 5f;
+
+    private Rigidbody2D myRigidBody;
     void Start()
     {
-        
+        myRigidBody = GetComponent<Rigidbody2D> ();
     }
 
     // Update is called once per frame
     private void Update()
     {
-     transform.Translate(speed * Time.deltaTime, 0, 0);
+    transform.Translate(speed * Time.deltaTime, 0, 0);
      
     }
     private void OnTriggerEnter2D(Collider2D other)         //When a box collider 2D triggers an other object
     {
-        if (other.gameObject.name == "RightBoundary")       //If the object's name is = to "RightBoundary"
+        if (other.tag == "Boundary")
         {
-            transform.Translate(2 * -speed * Time.deltaTime, 0, 0);     //Translate to the left by double that of movement speed
-        }
-        if (other.gameObject.name == "Left Boundary")
-        {
-            transform.Translate(2 * speed *Time.deltaTime,0 , 0);       //Translate to the right by double that of movement speed
+            speed *= -1;
         }
     }
 }

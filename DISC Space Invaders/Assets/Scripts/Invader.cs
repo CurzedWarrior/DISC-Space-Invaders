@@ -5,13 +5,13 @@ public class Invader : MonoBehaviour
     public Sprite[] animationSprites;
     public float animationTime = 1.0f;
     public System.Action<Invader> hit;
-
-    private SpriteRenderer spriteRenderer;
-    private int _animationFrame;
+    public SpriteRenderer spriteRenderer;
+    public int _animationFrame;
 
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = animationSprites[0];
     }
 
     private void Start()
