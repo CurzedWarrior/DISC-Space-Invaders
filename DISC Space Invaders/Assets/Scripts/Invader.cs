@@ -33,6 +33,7 @@ public class Invader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //if hit by laser destroy itself
         if (other.gameObject.layer == LayerMask.NameToLayer("Laser"))
         {
             Destroy(this.gameObject);

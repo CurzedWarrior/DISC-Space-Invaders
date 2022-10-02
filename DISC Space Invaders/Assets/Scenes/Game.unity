@@ -334,7 +334,6 @@ GameObject:
   - component: {fileID: 591021661}
   - component: {fileID: 591021660}
   - component: {fileID: 591021659}
-  - component: {fileID: 591021658}
   - component: {fileID: 591021657}
   - component: {fileID: 591021662}
   m_Layer: 7
@@ -358,32 +357,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   LaserPrefab: {fileID: 6075877914645679853, guid: 8bcf8ad4c9dbeb148915afdc5a35f27c, type: 3}
---- !u!61 &591021658
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 591021656}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.04567401, y: -0.077214025}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.25448233, y: 0.10498126}
-  m_EdgeRadius: 0
 --- !u!61 &591021659
 BoxCollider2D:
   m_ObjectHideFlags: 0

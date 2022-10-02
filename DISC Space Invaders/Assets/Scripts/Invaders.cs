@@ -11,14 +11,6 @@ public class Invaders : MonoBehaviour
     public Vector3 direction {get; private set; } = Vector3.right;
     public Vector3 initialPosition { get; private set; }
 
-    public static int count { get; private set;}
-    public static event System.Action AllDestroyed;
-
-
-    private void Start()
-    {
-        count++;
-    }
 
     private void Awake()
     {
@@ -71,20 +63,11 @@ public class Invaders : MonoBehaviour
                 Snaking();
                 break;
             }
-            if (--count == 0 && AllDestroyed != null)
-            {
-                SceneManager.LoadScene(3);
-            }
-            //if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Game") ){
-              //  if(invader.gameObject.activeInHierarchy == false)
-                //{
-                  //  SceneManager.LoadScene(3);
-                //}
-            //}
-            
-        }
-    }
 
+        }
+        
+
+    }
     private void Snaking()
     {
         direction = new Vector3(-direction.x, 0f, 0f);

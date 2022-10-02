@@ -9,12 +9,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
-        if (Input.GetKey("a"))
+        //Taking player inputs to move and shoot
+        if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(-speed * Time.deltaTime, 0, 0);
         }
-        if (Input.GetKey("d"))
+        if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(speed * Time.deltaTime, 0, 0);
         }
@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Shoot()
     {
+        //Shoot from the current location of player
         Instantiate(this.LaserPrefab, this.transform.position, Quaternion.identity);
     }
     
