@@ -11,6 +11,14 @@ public class Invaders : MonoBehaviour
     public Vector3 direction {get; private set; } = Vector3.right;
     public Vector3 initialPosition { get; private set; }
 
+    public static int count { get; private set;}
+    public static event System.Action AllDestroyed;
+
+
+    private void Start()
+    {
+        count++;
+    }
 
     private void Awake()
     {
@@ -36,8 +44,7 @@ public class Invaders : MonoBehaviour
     }
     private void Update()
     {  
-        Scene currentScene = SceneManager.GetActiveScene();
-        string sceneName = currentScene.name;
+        
         transform.position += direction * speed * Time.deltaTime;
 
         //Taking the coordinates of the viewport of the world so I can 
@@ -53,7 +60,6 @@ public class Invaders : MonoBehaviour
                 continue;
             }
             
-            
             //If the aliens reach the edge of the screen call Snaking()
             if (direction == Vector3.right && invader.position.x >= rightEdge.x)
             {
@@ -65,6 +71,16 @@ public class Invaders : MonoBehaviour
                 Snaking();
                 break;
             }
+            if (--count == 0 && AllDestroyed != null)
+            {
+                SceneManager.LoadScene(3);
+            }
+            //if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Game") ){
+              //  if(invader.gameObject.activeInHierarchy == false)
+                //{
+                  //  SceneManager.LoadScene(3);
+                //}
+            //}
             
         }
     }
