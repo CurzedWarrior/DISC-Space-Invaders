@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -36,6 +37,13 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.name == "Left Boundary")
         {
             transform.Translate(2 * speed *Time.deltaTime,0 , 0);       //Translate to the right by double that of movement speed
+        }
+
+        //If aliens collide with player, delete the player and move to defeat scene
+        if (other.gameObject.layer == LayerMask.NameToLayer("Alien"))
+        {
+            Destroy(this.gameObject);
+            SceneManager.LoadScene(2);
         }
     }
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Invaders : MonoBehaviour
 {
@@ -34,9 +35,10 @@ public class Invaders : MonoBehaviour
         
     }
     private void Update()
-    {
+    {  
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
         transform.position += direction * speed * Time.deltaTime;
-
 
         //Taking the coordinates of the viewport of the world so I can 
         //check when the invaders reach the edge of the screen
@@ -50,7 +52,8 @@ public class Invaders : MonoBehaviour
             {
                 continue;
             }
-
+            
+            
             //If the aliens reach the edge of the screen call Snaking()
             if (direction == Vector3.right && invader.position.x >= rightEdge.x)
             {
@@ -62,6 +65,7 @@ public class Invaders : MonoBehaviour
                 Snaking();
                 break;
             }
+            
         }
     }
 
