@@ -22,6 +22,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Shoot();
         }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
     void Shoot()
     {

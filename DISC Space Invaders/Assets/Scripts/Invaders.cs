@@ -7,9 +7,15 @@ public class Invaders : MonoBehaviour
     public Invader[] prefabs;       //Array of prefabs called invaders
     public int rows = 5;
     public int columns = 11;
-    public float speed = 3f;
+    public float speed = 5;
     public Vector3 direction {get; private set; } = Vector3.right;
     public Vector3 initialPosition { get; private set; }
+    public System.Action<Invader> killed;
+
+    public int AmountKilled {get; private set;}
+    public int AmountAlive => this.TotalAmount - this.AmountKilled;
+    public int TotalAmount => this.rows * this.columns;
+    
 
 
     private void Awake()
@@ -26,6 +32,8 @@ public class Invaders : MonoBehaviour
             for (int col = 0; col < this.columns; col++)
             {
                 Invader invader = Instantiate(this.prefabs[row], this.transform);                    //spawning the Invaders from the prefabs within the row. It also stores the result of this to invader
+                invader.killed += InvaderKilled;
+
                 Vector3 position = rowPosition;
                 
                 position.x += col * 2.0f;                                                            //Spacing between the invaders horizontally
@@ -53,12 +61,12 @@ public class Invaders : MonoBehaviour
             }
             
             //If the aliens reach the edge of the screen call Snaking()
-            if (direction == Vector3.right && invader.position.x >= rightEdge.x)
+            if (direction == Vector3.right && invader.position.x >= (rightEdge.x - 1.0f))
             {
                 Snaking();
                 break;
             }
-            if (direction == Vector3.left && invader.position.x <= leftEdge.x)
+            else if (direction == Vector3.left && invader.position.x <= (leftEdge.x + 1.0f))
             {
                 Snaking();
                 break;
@@ -78,5 +86,15 @@ public class Invaders : MonoBehaviour
         this.transform.position = position;
     }
     
+
+    private void InvaderKilled()
+    {
+        this.AmountKilled++;
+
+        if (this.AmountKilled >= this.TotalAmount)
+        {
+            SceneManager.LoadScene(3);
+        }
+    }
 
 }

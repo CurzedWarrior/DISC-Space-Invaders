@@ -624,7 +624,7 @@ MonoBehaviour:
   - {fileID: 234177096466290944, guid: 5fc6b7726a1437241be178c803cab7c3, type: 3}
   rows: 5
   columns: 11
-  speed: 3
+  speed: 5
 --- !u!4 &2034934509
 Transform:
   m_ObjectHideFlags: 0

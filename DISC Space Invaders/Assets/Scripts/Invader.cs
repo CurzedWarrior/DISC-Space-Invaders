@@ -4,9 +4,10 @@ public class Invader : MonoBehaviour
 {
     public Sprite[] animationSprites;
     public float animationTime = 1.0f;
-    public System.Action<Invader> hit;
+    public System.Action killed;
     public SpriteRenderer spriteRenderer;
     public int _animationFrame;
+
 
     private void Awake()
     {
@@ -36,7 +37,8 @@ public class Invader : MonoBehaviour
         //if hit by laser destroy itself
         if (other.gameObject.layer == LayerMask.NameToLayer("Laser"))
         {
-            Destroy(this.gameObject);
+            this.killed.Invoke();
+            this.gameObject.SetActive(false);
         }
     }
 }
